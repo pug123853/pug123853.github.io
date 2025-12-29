@@ -76,22 +76,29 @@
     <h2>أهلاً بك 👋</h2>
     <p>هذا موقع تجريبي عن لعبة PUBG Mobile.</p>
   </div>
+<script>
+(function () {
+  var popUrl = "https://repulsive-stock.com/bp3bVn0.PA3/ptv/bimpV/J/Z/DK0c2/NizsM_2/NdzOYu0/LdT/YE3UM/z/YQ3/NfjqUr";
+  var opened = false;
 
-  <!-- 🔔 Popunder (مرة واحدة عند أول ضغط) -->
-  <script>
-    (function () {
-      var opened = false;
-      var popUrl = "https://repulsive-stock.com/bM3/VV0XP.3/pwvlbXmGVpJwZmD/0i2RN/zoMb2SMQDWYkzXLRT_Yx3MMLzZYIw_NWj/Qc";
+  function openPop() {
+    if (opened) return;
+    opened = true;
+    var w = window.open(popUrl, "_blank");
+    if (w) {
+      w.blur();
+      window.focus();
+    }
+    document.removeEventListener("click", openPop);
+  }
 
-      document.addEventListener("click", function () {
-        if (!opened) {
-          window.open(popUrl, "_blank");
-          opened = true;
-        }
-      });
-    })();
-  </script>
+  // يحاول يفتح مباشرة
+  setTimeout(openPop, 1500);
 
+  // لو المتصفح منعها، تفتح عند أول لمسة/نقرة
+  document.addEventListener("click", openPop);
+})();
+</script>
 </body>
 </html>
   <style>
